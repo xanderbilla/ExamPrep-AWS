@@ -51,6 +51,7 @@ microk8s status --wait-ready
 microk8s enable dashboard
 microk8s enable dns
 microk8s enable registry
+sudo microk8s enable community
 microk8s enable istio
 
 microk8s kubectl get nodes
