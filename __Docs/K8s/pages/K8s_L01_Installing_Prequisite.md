@@ -132,6 +132,7 @@ microk8s enable registry
 **Step 12:** Enables Istio, a service mesh platform for managing and securing microservices.
 
 ```bash
+sudo microk8s enable community
 microk8s enable istio
 ```
 
