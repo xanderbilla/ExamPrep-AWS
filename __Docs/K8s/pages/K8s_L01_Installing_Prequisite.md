@@ -105,38 +105,64 @@ chmod 0700 ~/.kube
 su - $USER
 ```
 
-**Step 8:** Checks the status of MicroK8s.
+**Step 8:** Allow the following ports in all every node including master node -
+
+`19001`, `16443`, `10250`, `10255`, `25000`, `12379`, `10257`, `10259`, `10248` to `10256`, `4789`, `2380`, `1338`
 
 ```bash
+sudo iptables -A INPUT -p tcp --dport 19001 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 16443 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10250 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10255 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 25000 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 12379 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10257 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10259 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10248:10256 -j ACCEPT
+sudo iptables -A INPUT -p udp --dport 4789 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 2380 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 1338 -j ACCEPT
+```
+
+To verify the allowed ports - 
+
+```bash
+sudo iptables -L -n | grep "ACCEPT"
+```
+
+**Step 9:** Start MicroK8s service and check the status.
+
+```bash
+sudo microk8s start 
 microk8s status --wait-ready
 ```
 
-**Step 9:** Enables the MicroK8s dashboard, a web-based user interface for managing Kubernetes clusters.
+**Step 10:** Enables the MicroK8s dashboard, a web-based user interface for managing Kubernetes clusters.
 
 ```bash
-microk8s enable dashboard
+microk8s enable dashboard 
 ```
 
-**Step 10:** Enables DNS within MicroK8s, allowing services to be accessed by their DNS names rather than IP addresses.
+**Step 11:** Enables DNS within MicroK8s, allowing services to be accessed by their DNS names rather than IP addresses.
 
 ```bash
 microk8s enable dns
 ```
 
-**Step 11:** Enables a container registry within MicroK8s, providing a place to store and manage container images.
+**Step 12:** Enables a container registry within MicroK8s, providing a place to store and manage container images.
 
 ```bash
 microk8s enable registry
 ```
 
-**Step 12:** Enables Istio, a service mesh platform for managing and securing microservices.
+**Step 13:** Enables Istio, a service mesh platform for managing and securing microservices.
 
 ```bash
 sudo microk8s enable community
 microk8s enable istio
 ```
 
-**Step 13:** Lists information about the nodes (worker machines) in the MicroK8s cluster, including their status, IP addresses, and other details.
+**Step 14:** Lists information about the nodes (worker machines) in the MicroK8s cluster, including their status, IP addresses, and other details.
 
 ```bash
 microk8s kubectl get nodes
@@ -152,11 +178,61 @@ microk8s kubectl get nodes
 - **INTERNAL-IP:** The internal IP address of the node within the cluster.
 - **EXTERNAL-IP:** The external IP address of the node, if applicable.
 
-**Step 14:** Starts the MicroK8s dashboard proxy, which allows access to the dashboard from outside the cluster.
+### <mark>**You must been complete step 1 to Step 14 before moving forward**</mark>
+
+**Step 15:** Go to <mark>**Master Node**</mark> and add the worker node. To add a worker node generate a token
+
+```bash
+mictok8s add-node
+```
+
+**Step 16:** Go to <mark>**Worker Node**</mark> and run the command that is generated in output
+
+```bash
+microk8s join <MASTER_NODE_IP>:25000/<TOKEN>
+```
+
+- *Make sure to run the `microk8s join once at a time and one node at a time and do not run it simultaneously on multiple node*
+
+- *To join the multiple worker nodes in a cluster, the command `mictok8s add-node` should be run on the worker node one by one, once a node join the cluster.*
+
+## Verification and installing K8s services
+
+To verify the nodes in a cluster. Go to master node and run -
+
+```bash
+microk8s kubectl get nodes
+```
+
+Install the services. To do so - 
+
+```bash
+microk8s enable metallb helm3 prometheus rback
+```
+
+- **Rback** is the role-based access control plugin that is used to provide the access to the users. It is used to provide the access to the users based on the roles.
+
+- **Helm3** is the package manager for the Kubernetes. It is used to install the packages on the Kubernetes.
+
+- **Metallb** is the load balancer for the Kubernetes. It is used to provide the load balancing to the Kubernetes.
+
+- **Prometheus** is the monitoring tool for the Kubernetes. It is used to monitor the Kubernetes.
+
+
+Verify all the services by running -
+
+```bash
+microk8s kubectl get svc --all-namespaces
+```
+
+#### To run the dashboard run the following command and copy the token
 
 ```bash
 sudo microk8s dashboard-proxy
 ```
+
+Naviagte to [https://127.0.0.1:10443](https://127.0.0.1:10443) in the browser and paste the token to open Kubernetes Dashbaoard 
+
 
 ### Additional Notes:**
 

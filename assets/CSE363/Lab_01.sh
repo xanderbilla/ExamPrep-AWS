@@ -47,13 +47,30 @@ chmod 0700 ~/.kube
 
 su - $USER
 
+sudo microk8s start
+
+# Get the status of microk8s and enable required services
 microk8s status --wait-ready
 microk8s enable dashboard
 microk8s enable dns
 microk8s enable registry
 sudo microk8s enable community
-microk8s enable istio
+sudo microk8s enable istio
 
-microk8s kubectl get nodes
+# Allow the following ports in the firewall
 
-sudo microk8s dashboard-proxy
+sudo iptables -A INPUT -p tcp --dport 19001 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 16443 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10250 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10255 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 25000 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 12379 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10257 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10259 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 10248:10256 -j ACCEPT
+sudo iptables -A INPUT -p udp --dport 4789 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 2380 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 1338 -j ACCEPT
+
+# Get the list of nodes in the microk8s cluster
+sudo iptables -L -n | grep "ACCEPT"
