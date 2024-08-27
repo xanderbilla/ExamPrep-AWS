@@ -13,7 +13,7 @@ This repo maintains the documentation on basics of containrization and orchestra
 
 | Content                           | Link                                                        | 
 | :-------------------------------- |  :--------------------------------------------------------: | 
-| Lab 01 - Installing Docker and MicroK8 | [Click Here]()|
+| Lab 01 - Installing Docker and MicroK8 | [Click Here](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/pages/K8s_L01_Installing_Prequisite.md)|
 
 
 # Author

@@ -1,10 +1,10 @@
-[**Table of Contents**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/README.md) | [**Back to EC2**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/EC2/Index.md)
+[**Table of Contents**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/README.md) | [**Back to EC2**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/EC2/index.md)
 
-## EC2 with custom VPC
+# EC2 with custom VPC
 
 
 
-### Create VPC
+## Create VPC
 
 **Step 1:** Select a nearest region **>>** Go to AWS Services **>>** VPC
 
@@ -34,7 +34,7 @@ Click on **Your VPC** in left pane. In the VPC page you will able to see the fol
 - associated RTB
 etc.
 
-### Create Subnets
+## Create Subnets
 
 **Step 6:** In the left navigation pane click on Subnets >> **Click on create subnet**.
 
@@ -51,7 +51,7 @@ etc.
 **Step 8:** Click on create subnet
 
 
-### Create an Internet Gateway
+## Create an Internet Gateway
 
 **Step 9:** In the left navigation pane click on Internet Gateway >> **Click on create Internet Gateway**.
 
@@ -65,7 +65,7 @@ The created intenet gateway details page will open.
 
 **Step 12:** Click on **Actions** >> **Attach to VPC** >> Select the VPC in which we want to attach
 
-### Create Route table
+## Create Route table
 
 **Step 13:** In the left navigation pane click on Route Table >> **Click on create Route Table**.
 
@@ -87,7 +87,7 @@ The created Route table details page will open.
 
 **Repeat the step 13 to 19 to create Private Route table (skipping the step 17 and 18)**
 
-### Create NAT Gateway
+## Create NAT Gateway
 
 **Step 20:** In the left navigation pane click on NAT Gateway >> **Click on create NAT Gateway**.
 
@@ -108,7 +108,7 @@ The created Route table details page will open.
 
 **Step 25:** Save changes. 
 
-### Create a custom Security Group
+## Create a custom Security Group
 
 In the left side panel of VPC page. Go to Security > Security Group
 
@@ -126,4 +126,16 @@ In the left side panel of VPC page. Go to Security > Security Group
 **Step 3:** Click on create security group
 
 
-### [Create an EC2 instance using the above Custom VPC](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/EC2/pages/EC2_L01_Launch_An_Instance.md)
+## [Create an EC2 instance using the above Custom VPC](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/EC2/pages/EC2_L01_Launch_An_Instance.md)
+
+Create two EC2 instances as following
+
+
+| Instance    | Subnet  |
+| :---------: | :------ |
+| Instance-01 | Public  |
+| Instance-02 | Private |
+
+Try Connect your private EC2 using `Instance-01`
+
+**To store the key pairs use S3**

@@ -1,8 +1,8 @@
-[**Table of Contents**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/README.md) | [**Back to EC2**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/EC2/Index.md)
+[**Table of Contents**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/README.md) | [**Back to EC2**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/EC2/index.md)
 
-## Managing EC2 Using managment Console
+# Managing EC2 Using managment Console
 
-### Create an EC2 instance
+## Create an EC2 instance
 
 **Step 1:** Select a nearest region **>>** Go to AWS Services **>>** EC2
 
