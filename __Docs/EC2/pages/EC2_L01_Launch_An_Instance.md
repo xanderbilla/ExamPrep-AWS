@@ -62,7 +62,7 @@ etc.
 
 **Step 10:** We will see many options to connect with our instance. 
 
-**Step 11:** Open your terminal and naviagte to the key pair. 
+**Step 11:** Open and naviagte to the key pair where you have downloaded in your terminal. 
 
 ```bash
 chmod 400 <KEY_PAIR_FILE>
