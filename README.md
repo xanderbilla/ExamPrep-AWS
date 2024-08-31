@@ -12,6 +12,7 @@ The repository serves as a centralized location for storing my exam preparation 
 |:-------| :----------- | 
 | AWS-01 | [Simple Service Storage (S3)](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/S3/Index.md)|
 | AWS-02 | [Elastic Cloud Computing (EC2)](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/EC2/index.md)|
+| AWS-02 | [Elastic Container Service (ECS) & Elastic Container Registery (ECR)](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/ECS-ECR/Index.md)|
 |DEVOPS-01| [Kubernetes (K8s)](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/index.md)|
 
 # Author
