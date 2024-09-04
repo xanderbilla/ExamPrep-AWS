@@ -1,6 +1,7 @@
 [**Table of Contents**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/README.md) | [**Back to K8s**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/index.md)
 
-# Launch an application using container
+
+# Launch an application using 
 
 Step **1**: Launch a Linux Terminal (Either on [AWS](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/pages/K8s_L01_Installing_Prequisite.md) or [Local Virtual Machine](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/pages/K8s_L02_Setting_MicroK8s_using_on_AWS.md))
 
@@ -36,9 +37,11 @@ total 0
 -rw-r--r--. 1 ec2-user ec2-user 0 Aug 31 04:49 requirements.txt
 ```
 
-**Step 4:** Navigate to each iles and write teh associated code to deine our application and other commands
+**Step 4:** Navigate to each iles and write the associated code to define our application and other commands
 
-Step 4**.**1: Navigate to `app.py` and edit the file using `nano` 
+> **You can find the entire code [here](https://github.com/xanderbilla/ExamPrep-AWS/tree/main/assets/CSE363labs/Lab_03/my-project) for this lab**
+
+**Step 4.1:** Navigate to `app.py` and edit the file using `nano` 
 
 ```py
 from flask import Flask
@@ -146,7 +149,7 @@ c5ed7ca66713   my-app        "-p 5000:80"      2 minutes ago        Created     
 
 ![Output](https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/__assets/K8s_L03_Step_7.png)
 
-# Additional Notes
+## Additional Notes
 
 - If you're using AWS EC2 make sure to update your Security group inbound rule that allow Port 5000 to `0.0.0.0/0`
 
@@ -159,6 +162,25 @@ c5ed7ca66713   my-app        "-p 5000:80"      2 minutes ago        Created     
 | `docker ps -a`   | Lists all containers, including running, stopped, and exited ones |
 | `docker rmi -f <IMAGE_ID>`     | Lists only the running containers.
 | `docker rm <CONTAINER_ID`      | Lists only the running containers.
+
+### You can perform this lab using the pre-written script
+
+```bash
+wget https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/resources/Lab_03.sh > /dev/null 2>&1
+chmod +x Lab_03.sh
+./Lab_03.sh
+```
+
+Output:
+
+```
+[✓] Create project directory
+[✓] Create required files
+[✓] Write code in app.py
+[✓] Write requirements in requirements.txt
+[✓] Write code in dockerfile
+[✓] Build and run Docker image
+```
 
 # Author
 

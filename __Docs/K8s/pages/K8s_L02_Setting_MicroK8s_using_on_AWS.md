@@ -230,9 +230,37 @@ Naviagte to **https://<PUBLIC_IP>:10443** (In my case it's [**https://3.10.142.5
 
 <mark>If you're using Virtual Machine use localhost loopbakc i.e., **127.0.0.1** instead of **<PUBLIC_IP>**</mark>
 
-### Additional Notes:**
+## Additional Notes:**
 
 - The specific output of `microk8s kubectl get nodes` will vary depending on the number and configuration of nodes in your cluster.
 - The `microk8s dashboard-proxy` command typically runs in the background and can be accessed by opening a web browser and navigating to the specified URL.
 
+### You can perform this lab using the pre-written script
 
+```bash
+wget https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/resources/Lab_01.sh > /dev/null 2>&1
+chmod +x Lab_01.sh
+./Lab_01.sh
+```
+
+Output:
+
+```
+[✓]  Remove old Docker packages
+[✓]  Add Docker GPG key
+[✓]  Add Docker repository
+[✓]  Install Docker
+[✓]  Start and enable Docker
+[✓]  Install Kubernetes tools
+[✓]  Install MicroK8s
+[✓]  Allow required ports in the firewall
+[✓]  Verify firewall rules
+[✓]  Configure MicroK8s
+
+
+Setup Completed!
+```
+
+# Author
+
+[@xanderbilla](https://github.com/xanderbilla)

@@ -1,6 +1,6 @@
 [**Table of Contents**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/README.md) | [**Back to K8s**](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/index.md)
 
-## Setup a Virtual Machine
+# Setup a Virtual Machine
 
 **Step 1:** Download & install a [**VMWare Workstation**](https://blogs.vmware.com/workstation/2024/05/vmware-workstation-pro-now-available-free-for-personal-use.html)
 
@@ -234,9 +234,37 @@ sudo microk8s dashboard-proxy
 Naviagte to [https://127.0.0.1:10443](https://127.0.0.1:10443) in the browser and paste the token to open Kubernetes Dashbaoard 
 
 
-### Additional Notes:**
+## Additional Notes:**
 
 - The specific output of `microk8s kubectl get nodes` will vary depending on the number and configuration of nodes in your cluster.
 - The `microk8s dashboard-proxy` command typically runs in the background and can be accessed by opening a web browser and navigating to the specified URL.
 
+### You can perform this lab using the pre-written script
 
+```bash
+wget https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/resources/Lab_01.sh > /dev/null 2>&1
+chmod +x Lab_01.sh
+./Lab_01.sh
+```
+
+Output:
+
+```
+[✓]  Remove old Docker packages
+[✓]  Add Docker GPG key
+[✓]  Add Docker repository
+[✓]  Install Docker
+[✓]  Start and enable Docker
+[✓]  Install Kubernetes tools
+[✓]  Install MicroK8s
+[✓]  Allow required ports in the firewall
+[✓]  Verify firewall rules
+[✓]  Configure MicroK8s
+
+
+Setup Completed!
+```
+
+# Author
+
+[@xanderbilla](https://github.com/xanderbilla)
