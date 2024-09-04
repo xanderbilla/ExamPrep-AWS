@@ -39,7 +39,7 @@ total 0
 
 **Step 4:** Navigate to each iles and write the associated code to define our application and other commands
 
-> **You can find the entire code [here](https://github.com/xanderbilla/ExamPrep-AWS/tree/main/assets/CSE363labs/Lab_03/my-project) for this lab**
+> **You can find the entire code [here](https://github.com/xanderbilla/ExamPrep-AWS/tree/main/assets/CSE363/labs/Lab_03/my-project) for this lab**
 
 **Step 4.1:** Navigate to `app.py` and edit the file using `nano` 
 
