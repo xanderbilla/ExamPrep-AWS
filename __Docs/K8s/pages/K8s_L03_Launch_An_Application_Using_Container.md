@@ -174,12 +174,12 @@ chmod +x Lab_03.sh
 Output:
 
 ```
-[✓] Create project directory
-[✓] Create required files
-[✓] Write code in app.py
-[✓] Write requirements in requirements.txt
-[✓] Write code in dockerfile
-[✓] Build and run Docker image
+[OK] Create project directory
+[OK] Create required files
+[OK] Write code in app.py
+[OK] Write requirements in requirements.txt
+[OK] Write code in dockerfile
+[OK] Build and run Docker image
 ```
 
 # Author

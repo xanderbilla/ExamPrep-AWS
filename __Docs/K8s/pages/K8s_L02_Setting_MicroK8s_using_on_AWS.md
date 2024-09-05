@@ -240,22 +240,23 @@ Naviagte to **https://<PUBLIC_IP>:10443** (In my case it's [**https://3.10.142.5
 ```bash
 wget https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/resources/Lab_01.sh > /dev/null 2>&1
 chmod +x Lab_01.sh
+sed -i 's/\r//' Lab_01.sh
 ./Lab_01.sh
 ```
 
 Output:
 
 ```
-[✓]  Remove old Docker packages
-[✓]  Add Docker GPG key
-[✓]  Add Docker repository
-[✓]  Install Docker
-[✓]  Start and enable Docker
-[✓]  Install Kubernetes tools
-[✓]  Install MicroK8s
-[✓]  Allow required ports in the firewall
-[✓]  Verify firewall rules
-[✓]  Configure MicroK8s
+[OK]  Remove old Docker packages
+[OK]  Add Docker GPG key
+[OK]  Add Docker repository
+[OK]  Install Docker
+[OK]  Start and enable Docker
+[OK]  Install Kubernetes tools
+[OK]  Install MicroK8s
+[OK]  Allow required ports in the firewall
+[OK]  Verify firewall rules
+[OK]  Configure MicroK8s
 
 
 Setup Completed!

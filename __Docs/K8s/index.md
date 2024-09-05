@@ -16,6 +16,7 @@ This repo maintains the documentation on basics of containrization and orchestra
 | Lab 01 - Installing Docker and MicroK8 | [Click Here](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/pages/K8s_L01_Installing_Prequisite.md)|
 | Lab 02 - Setting MicroK8s using on AWS | [Click Here](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/pages/K8s_L02_Setting_MicroK8s_using_on_AWS.md)|
 | Lab 03 - Launch an application using container | [Click Here](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/pages/K8s_L03_Launch_An_Application_Using_Container.md)|
+| Lab 04 - Creating a service and deploying using docker | [Click Here](https://github.com/xanderbilla/ExamPrep-AWS/blob/main/__Docs/K8s/pages/K8s_L04_Create_A_Microservice_Expanding_Lab_03.md)|
 
 
 # Author

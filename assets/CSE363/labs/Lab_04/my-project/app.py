@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 
 def authenticate_user(username, password):
     if username == "admin" and password == "passwd":
@@ -18,9 +18,9 @@ def login():
             flash('Login successful!', 'success')
             return redirect(url_for('home'))  # Replace with the desired redirect URL
         else:
-            flash('Invalid username or password.', 'error')
+            flash('Invalid credentials.', 'error')
 
-    return render_template('template/login.html')
+    return render_template('login.html')
 
 @app.route('/home')
 def home():

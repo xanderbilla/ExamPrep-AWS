@@ -107,20 +107,20 @@ c5ed7ca66713   my-app        "-p 5000:80"      2 minutes ago        Created     
 # You can perform this lab using the pre-written script
 
 ```bash
-wget https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/resources/Lab_03.sh > /dev/null 2>&1
-chmod +x Lab_03.sh
-./Lab_03.sh
+wget https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/resources/Lab_04.sh > /dev/null 2>&1
+chmod +x Lab_04.sh
+./Lab_04.sh
 ```
 
 Output:
 
 ```
-[✓] Create project directory
-[✓] Create required files
-[✓] Write code in app.py
-[✓] Write requirements in requirements.txt
-[✓] Write code in dockerfile
-[✓] Build and run Docker image
+[OK] Create project directory
+[OK] Create required files
+[OK] Write code in app.py
+[OK] Write requirements in requirements.txt
+[OK] Write code in dockerfile
+[OK] Build and run Docker image
 ```
 
 # Additional Notes
