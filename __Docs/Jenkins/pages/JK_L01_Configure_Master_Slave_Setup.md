@@ -36,13 +36,13 @@ Finally Click on **Start Using Jenkins**
 
 ![P1_STEP_23.2_IMG](https://xanderbilla.s3.ap-south-1.amazonaws.com/Semester_V/__assets/P1_STEP_23.2_IMG.png)
 
-Step 6: Go to Dashboard >> Manage Jenkins >> Nodes
+**Step 6:** Go to Dashboard >> Manage Jenkins >> Nodes
 
-Step 7: Click on **New Node** to create a node.
+**Step 7:** Click on **New Node** to create a node.
 
 Enter the Node name and select Permanent Agent as a Type and click on Create.
 
-Step 8: A new configuration page will open -
+**Step 8:** A new configuration page will open -
 
 - Write a description (optional)
 - Number of executors: 1
@@ -65,11 +65,11 @@ Now it's time to test our slave instance using a pipeline.
 
 We will try to access and print some information using on Slave Instance using Jenkins which is running on Master Node.
 
-Step 9: Go to the dashboard and Click on **New Item**.
+**Step 9:** Go to the dashboard and Click on **New Item**.
 
 Enter a Project name and select freestyle Project and click on Create.
 
-Step 10: In the configuration page go to **Build Steps** Section and select `Execute Shell`
+**Step 10:** In the configuration page go to **Build Steps** Section and select `Execute Shell`
 
 Enter the following command and hit **Apply** and then **Save**
 
@@ -81,6 +81,21 @@ echo "Public IP: $public_ip"
 ```
 
 >This will print the Hostname and the Public IP Address of the machine.
+
+**Step 11:** Go TO dashboard select the project and Click on **Build Now** >> Select a Build >> Click on **Console Output**
+
+Output:
+
+```
+Started by user admin
+Running as SYSTEM
+Building remotely on jk-node-1 (jenkins-slave) in workspace /home/ubuntu/workspace/test-node
+[test-node] $ /bin/sh -xe /tmp/jenkins8818104534851505157.sh
+Hostname: ip-172-31-47-131
+Public IP: 54.162.182.65
+Finished: SUCCESS
+```
+
 
 # Author
 
