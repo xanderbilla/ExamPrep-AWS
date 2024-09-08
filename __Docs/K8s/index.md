@@ -6,7 +6,7 @@
 
 # Introduction
 
-This repo maintains the documentation on basics of containrization and orchestration tools such as Kubernetes and Docker. This repo have everything from initializing to deployment.  
+This repo maintains the documentation on basics of containerization and orchestration tools such as Kubernetes and Docker. This repo have everything from initializing to deployment.
 
 # Table of Content
 
